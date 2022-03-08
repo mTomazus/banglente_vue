@@ -1,21 +1,21 @@
 <template>
-    <div class="stovykla part mb-4">
+    <div class="stovykla part">
         <h1>Vaikų dienos stovykla 2022</h1>
 
         <div id="carouselExampleSlidesOnly" class="carousel slide col w-50" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="../assets/stovykla/1.jpg" class="d-block w-100" alt="...">
+                    <img src="@/assets/stovykla/1.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="../assets/stovykla/2.jpg" class="d-block w-100" alt="...">
+                    <img src="@/assets/stovykla/2.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="../assets/stovykla/3.jpg" class="d-block w-100" alt="...">
+                    <img src="@/assets/stovykla/3.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
             <router-link  class="button" to="/">
-                <img src="../assets/blob.svg" alt="mygtukas">
+                <img src="@/assets/blob4.svg" alt="mygtukas">
                 <h3>press</h3>
             </router-link>
         </div>
@@ -54,10 +54,12 @@
     }
 }
     .stovykla {
-        background-image: url("../assets/waves2.svg");
+        background-image: url("@/assets/waves6.svg");
+        background-size: cover;
     }
     .part {
-        height: 93vh;
+        padding-top: 7vh;
+        height: 100vh;
         background-color: white;
         display: flex;
         flex-direction: column;

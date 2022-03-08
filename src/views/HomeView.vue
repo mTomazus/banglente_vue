@@ -1,27 +1,26 @@
 <template>
   <div class="home">
-    <div class="container">
-      <StovyklaPart/>
-      <PamokosPart/>
-      <StraipsniaiPart/>
-      <KontaktaiPart/>
-    </div>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <StovyklaPart/>
+    <PamokosPart/>
+    <StraipsniaiPart/>
+    <KontaktaiPart/>
+    
+    <!--<HelloWorld msg="Welcome to Your Vue.js App"/> --->
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-import StovyklaPart from '@/components/StovyklaPart.vue'
-import StraipsniaiPart from '@/components/StraipsniaiPart.vue'
-import PamokosPart from '@/components/PamokosPart.vue'
-import KontaktaiPart from '@/components/KontaktaiPart.vue'
+// import HelloWorld from '@/components/HelloWorld.vue'
+import StovyklaPart from '@/views/home/StovyklaPart.vue'
+import StraipsniaiPart from '@/views/home/StraipsniaiPart.vue'
+import PamokosPart from '@/views/home/PamokosPart.vue'
+import KontaktaiPart from '@/views/home/KontaktaiPart.vue'
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld,
+    // HelloWorld,
     StovyklaPart,
     StraipsniaiPart,
     PamokosPart,

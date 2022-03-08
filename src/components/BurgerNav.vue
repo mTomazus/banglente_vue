@@ -4,7 +4,7 @@
             <img alt="logo" src="@/assets/logo.png">
         </div>
         <div class="name">
-            <img alt="banglente" src="@/assets/banglente.png">
+            <h1>BANGLENTĖ</h1>>
         </div>
         <nav>
             <ul v-show="!mobile" class="navigation">
@@ -66,28 +66,41 @@
 </script>
 
 <style scoped lang="scss" >
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
     .brand{
         padding: 7.5px;
         img{
-            height: 35px;
+            height: 5vh;
             margin: auto;
+            padding: 0 1vh;
+            filter: invert(1);
         }
     }
     .name{
-        padding: 5px;
-        img{
-            height: 40px;
+        font-family: 'DM Serif Display', serif;
+        display: flex;
+        height: 7vh;
+        margin: auto;
+        h1 {
+            font-size: 5vh;
+            padding: 0;
             margin: auto;
+            color: white;
         }
     }
     #burger{
-        padding: 8px;
+        padding: 0 2vh;
         transition: 1.5s ease all;
+        display: flex;
+        flex-direction: column;
+        min-height: 7vh;
+        justify-content: center;
         div{
-            height: 3px;
+            height: 4px;
             width: 30px;
-            margin: 7px;
-            background-color: black;
+            margin: 4px;
+            background-color: white;
+            border-radius: 10px;
         }
     }
     .icon-active {
@@ -101,11 +114,12 @@
         width: 80vw;
         max-width: 80vw;
         height: 100%;
-        background-color: rgb(235, 235, 235);
+        background-color: #438496;
         top: 7vh;
         right: 0;
         list-style: none;
         transform-origin: top right;
+        color: white;
         z-index: 100;
     }
     .mobile-nav-enter-active,
