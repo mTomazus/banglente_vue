@@ -8,8 +8,8 @@
         </div>
         <nav>
             <ul v-show="!mobile" class="navigation">
-                <li class="link"><router-link to="{ name: 'home' }">Home</router-link></li>
-                <li class="link"><router-link to="{ name: 'about' }">About</router-link></li>
+                <li class="link"><router-link :to="{ name: 'home' }">Home</router-link></li>
+                <li class="link"><router-link :to="{ name: 'about' }">About</router-link></li>
             </ul>
             <div id="burger" v-show="mobile" @click="toggleMobileNav" :class="{ 'icon-active': mobileNav }" >
                 <div class="line"></div>
@@ -18,13 +18,13 @@
             </div>
             <transition name="mobile-nav" @click="toggleMobileNav">
                 <ul v-show="mobileNav" class="dropdown-nav container">
-                    <li><router-link class="link" to="/">Pradžia</router-link></li>
-                    <li><router-link class="link" to="{ name: '' }">Pamokos</router-link></li>
-                    <li><router-link class="link" to="{ name: '' }">Stovykla</router-link></li>
-                    <li><router-link class="link" to="{ name: '' }">Nuoma</router-link></li>
-                    <li><router-link class="link" to="{ name: '' }">Kelionės</router-link></li>
-                    <li><router-link class="link" to="{ name: 'about' }">Apie mus</router-link></li>
-                    <li><router-link class="link" to="{ name: '' }">Straipsniai</router-link></li>
+                    <li><router-link class="link" :to="{name: 'home'}">Pradžia</router-link></li>
+                    <li><router-link class="link" to="{name: '' }">Pamokos</router-link></li>
+                    <li><router-link class="link" to="{name: '' }">Stovykla</router-link></li>
+                    <li><router-link class="link" to="{name: '' }">Nuoma</router-link></li>
+                    <li><router-link class="link" to="{name: '' }">Kelionės</router-link></li>
+                    <li><router-link class="link" :to="{name: 'about' }">Apie mus</router-link></li>
+                    <li><router-link class="link" :to="{name: 'straipsniai'}">Straipsniai</router-link></li>
                     <li>social</li>
                 </ul>
             </transition>
