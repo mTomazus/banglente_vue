@@ -11,6 +11,24 @@ const routes = [
 
   },
   {
+    path: '/pamokos',
+    name: 'pamokos',
+    meta: {
+      title: "Banglentės | Banglenčių pamokos ir camp'as.",
+    },
+    component: () => import('../views/PamokosView.vue')
+
+  },
+  {
+    path: '/stovykla',
+    name: 'stovykla',
+    meta: {
+      title: "Banglentės | Banglenčių  vasaros stovykla.",
+    },
+    component: () => import('../views/StovyklaView.vue')
+
+  },
+  {
     path: '/about',
     name: 'about',
     meta: {

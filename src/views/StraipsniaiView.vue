@@ -19,11 +19,11 @@
         },
 
         updated() {
-            this.isExactActive = typeof this.$refs.rv === 'undefined';
+            this.isExactActive = typeof this.$refs.rv === "undefined";
         },
 
         mounted() {
-            this.isExactActive = typeof this.$refs.rv === 'undefined';
+            this.isExactActive = typeof this.$refs.rv === "undefined";
         }
 
     }

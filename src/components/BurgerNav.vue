@@ -4,7 +4,7 @@
             <img alt="logo" src="@/assets/logo.png">
         </div>
         <div class="name">
-            <h1>BANGLENTĖ</h1>>
+            <h1>BANGLENTĖ</h1>
         </div>
         <nav>
             <ul v-show="!mobile" class="navigation">
@@ -18,14 +18,7 @@
             </div>
             <transition name="mobile-nav" @click="toggleMobileNav">
                 <ul v-show="mobileNav" class="dropdown-nav container">
-                    <li><router-link class="link" :to="{name: 'home'}">Pradžia</router-link></li>
-                    <li><router-link class="link" to="{name: '' }">Pamokos</router-link></li>
-                    <li><router-link class="link" to="{name: '' }">Stovykla</router-link></li>
-                    <li><router-link class="link" to="{name: '' }">Nuoma</router-link></li>
-                    <li><router-link class="link" to="{name: '' }">Kelionės</router-link></li>
-                    <li><router-link class="link" :to="{name: 'about' }">Apie mus</router-link></li>
-                    <li><router-link class="link" :to="{name: 'straipsniai'}">Straipsniai</router-link></li>
-                    <li>social</li>
+                    <MobileNav/>
                 </ul>
             </transition>
         </nav>
@@ -33,8 +26,12 @@
 </template>
 
 <script>
+    import MobileNav from '@/components/MobileNav.vue'
     export default {
         name: 'BurgerNav',
+        components: {
+            MobileNav
+        },
         data() {
             return {
                 scrollPosition: null,
@@ -53,7 +50,7 @@
             },
             checkScreen() {
                 this.windowWidth = window.innerWidth;
-                if (this.windowWidth <=750) {
+                if (this.windowWidth <=800) {
                     this.mobile = true;
                     return;
                 }
@@ -94,6 +91,7 @@
         display: flex;
         flex-direction: column;
         min-height: 7vh;
+        float: right;
         justify-content: center;
         div{
             height: 4px;
