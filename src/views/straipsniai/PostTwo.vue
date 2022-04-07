@@ -1,50 +1,38 @@
 <template>
-    <div class="straipsnis">
-        <div class="title mt-3">
-           <h1>Molas Surf Competition 2015</h1>
-            <h2>Klaipėdos Šiaurinis Molas</h2>
-            <h3>2015 Lapkričio 8 d.</h3>  
+    <div class="straipsnis d-flex flex-column w-100">
+        <div class="title my-3">
+            <h1>Banglentininkų etiketas</h1>
+            <h3>2022 Kovo 1 d.</h3>  
+        </div>
+        <p>Su vis didesnį populiarumą įgaunančiu banglenčių sportu, 
+            žmonių skaičius vandenyje auga ir, 
+            dėja banglentininkų etiketo suvokimas palaipsniui mažėja.
+            Pabandom tai ištaisyti :)</p>
+        <img src="@/assets/straipsniai/etiketas.jpg" alt="">
+        <div>
+            <h3>TAISYKLĖ #1: PIRMUMO TEISĖ</h3>
+            <p>Serferis, esantis arčiausiai bangos piko, turi pirmumo teisę.</p>
         </div>
         <div>
-            <p>Pirmosios Lietuvos banglenčių varžybos</p>
-            <p>Sąlygos buvo  ne pyragai :)</p>
-            <p>Dalyvių buvo 8 ( 6 lietuviai ir 2 latvijos sportininkai )</p>
-            <p>Teisėjavo: Gediminas Ustinavičius - Akinys ir Robertas Gradauskas - Bobas</p>
+            <h3>TAISYKLĖ #2: NE DROP-IN'ink</h3>
+            <p>Tai reiškia, kad kažkas su pirmenybe 
+                jau stojasi ar jau čiuožia
+                ir tu bandai gaudyti tą pačią bangą</p>
         </div>
-        <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="@/assets/straipsniai/molo_1.jpeg" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="@/assets/straipsniai/molo_2.jpeg" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="@/assets/straipsniai/molo_3.jpeg" alt="Third slide">
-                </div>
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="@/assets/straipsniai/molo_4.jpeg" alt="fourth slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="@/assets/straipsniai/molo_5.jpeg" alt="Fitht slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="@/assets/straipsniai/molo_6.jpeg" alt="sixth slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="@/assets/straipsniai/molo_2015_7.png" alt="winners slide">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+        <div>
+            <h3>TAISYKLĖ #3: PADDLING</h3>
+            <p> Nesiirk tiesiai per lineup'ą, kur žmonės gaudo bangas. 
+                Išsiirk per kanalą, kur nelūžta bangos 
+                ir žmonės negaudo bangų.</p>
         </div>
-        <p>Organizavo: VšĮ Banglentė ir VšĮ Ekstremalaus Sporto Federacija</p>
+        <div>
+            <h3>TAISYKLĖ #4: LENTA</h3>
+            <p> Visada laikykis savo lentos. 
+                Stenkis jos niekada nepaleisti. 
+                Leash'as nevisada suveikia.</p>
+        </div>
+        <img src="@/assets/straipsniai/interference.jpg" alt="">
+        <h2>Sekmės bangose</h2>
     </div>
 </template>
 
@@ -54,10 +42,22 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
     .straipsnis {
-        height: 100vh;
-        padding-top: 7vh;
+        background-color: #1000bf;
+        h1 {
+            text-transform: uppercase;
+        }
+        h3 {
+            background-color: white;
+            width: max-content;
+            color: black;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        img {
+            margin-bottom: 1rem;
+        }
     }
     .carousel-item img {
         max-height: 232px;

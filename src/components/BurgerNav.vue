@@ -1,40 +1,41 @@
 <template>
-    <header class="{'scrolled-nav': scrollPosition}">
-        <div class="brand">
-            <img alt="logo" src="@/assets/logo.png">
+    <nav>
+    <!-- Burger mobile button -->
+        <div v-if="mobile" class="burger-mobile" @click="toggleMobileNav" :class="{ 'icon-active': mobileNav }" >
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
-        <div class="name">
-            <h1>BANGLENTĖ</h1>
+    <!-- Burger desktop button -->
+        <div v-if="!mobile" class="burger-desktop" @click="toggleMobileNav" :class="{ 'icon-active': mobileNav }" >
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
-        <nav>
-            <ul v-show="!mobile" class="navigation">
-                <li class="link"><router-link :to="{ name: 'home' }">Home</router-link></li>
-                <li class="link"><router-link :to="{ name: 'about' }">About</router-link></li>
+    <!-- mobile nav menu -->    
+        <transition v-if="mobile" name="mobile-nav" @click="toggleMobileNav">
+            <ul v-show="mobileNav" class="dropdown-nav container">
+                <BurgerLinks/>
             </ul>
-            <div id="burger" v-show="mobile" @click="toggleMobileNav" :class="{ 'icon-active': mobileNav }" >
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
-            <transition name="mobile-nav" @click="toggleMobileNav">
-                <ul v-show="mobileNav" class="dropdown-nav container">
-                    <MobileNav/>
-                </ul>
-            </transition>
-        </nav>
-    </header>
+        </transition>
+    <!-- desktop nav menu -->
+        <transition v-if="!mobile" name="desktop-nav" @click="toggleMobileNav">
+            <ul v-show="mobileNav" class="dropdown-desktop-nav container">
+                <BurgerLinks/>
+            </ul>
+        </transition>
+    </nav>
 </template>
 
 <script>
-    import MobileNav from '@/components/MobileNav.vue'
+    import BurgerLinks from '@/components/BurgerLinks.vue'
     export default {
         name: 'BurgerNav',
         components: {
-            MobileNav
+            BurgerLinks
         },
         data() {
             return {
-                scrollPosition: null,
                 mobile: true,
                 mobileNav: null,
                 windowWidth: null,
@@ -63,30 +64,8 @@
 </script>
 
 <style scoped lang="scss" >
-    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
-    .brand{
-        padding: 7.5px;
-        img{
-            height: 5vh;
-            margin: auto;
-            padding: 0 1vh;
-            filter: invert(1);
-        }
-    }
-    .name{
-        font-family: 'DM Serif Display', serif;
-        display: flex;
-        height: 7vh;
-        margin: auto;
-        h1 {
-            font-size: 5vh;
-            padding: 0;
-            margin: auto;
-            color: white;
-        }
-    }
-    #burger{
-        padding: 0 2vh;
+    .burger-mobile {
+        padding: 0 20px;
         transition: 1.5s ease all;
         display: flex;
         flex-direction: column;
@@ -94,10 +73,25 @@
         float: right;
         justify-content: center;
         div{
-            height: 4px;
+            height: 5px;
             width: 30px;
-            margin: 4px;
-            background-color: white;
+            margin: 3px;
+            background-color: #1000bf;
+            border-radius: 10px;
+        }
+    }
+    .burger-desktop {
+        padding: 1rem;
+        transition: 1.5s ease all;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        z-index: 100000;
+        div{
+            height: 5px;
+            width: 30px;
+            margin: 3px;
+            background-color: #ffffff;
             border-radius: 10px;
         }
     }
@@ -111,8 +105,8 @@
         position: fixed;
         width: 80vw;
         max-width: 80vw;
-        height: 100%;
-        background-color: #438496;
+        height: 93vh;
+        background-color: #1000bf;
         top: 7vh;
         right: 0;
         list-style: none;
@@ -120,15 +114,44 @@
         color: white;
         z-index: 100;
     }
+    .dropdown-desktop-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #1000bf;
+        top: 0;
+        left: 0;
+        list-style: none;
+        color: white;
+        z-index: 1000;
+    }
     .mobile-nav-enter-active,
     .mobile-nav-leave-active{
-        transition: 1.5s ease all;
+        transition: 1s ease all;
     }
     .mobile-nav-enter-from,
     .mobile-nav-leave-to{
         transform: rotate(-90deg);
+        opacity: 0.5;
     }
     .mobile-nav-enter-to{
         transform: rotate(0deg);
+        opacity: 1;
+    }
+    .desktop-nav-enter-active,
+    .desktop-nav-leave-active{
+        transition: 1s ease all;
+    }
+    .desktop-nav-enter-from,
+    .desktop-nav-leave-to{
+        transform: translateX(-100%);
+        opacity: 0.5;
+    }
+    .desktop-nav-enter-to{
+        transform: translateX(0%);
+        opacity: 1;
     }
 </style>

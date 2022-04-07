@@ -45,13 +45,15 @@
     h1 {
         margin: 3rem 0;
         font-size: 3rem;
+        color: white;
+        font-family: Alegreya Sans;
+        text-transform: uppercase;
     }
     .straipsniai {
         height: 93vh;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        background-image: url("@/assets/circle2.svg");
     }
     .wrapper {
         display: flex;

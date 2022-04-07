@@ -29,6 +29,24 @@ const routes = [
 
   },
   {
+    path: '/nuoma',
+    name: 'nuoma',
+    meta: {
+      title: "Banglentės | Banglenčių - irklenčių - riedlenčių nuoma.",
+    },
+    component: () => import('../views/NuomaView.vue')
+
+  },
+  {
+    path: '/keliones',
+    name: 'keliones',
+    meta: {
+      title: "Banglentės | Keliones serfinti į kitus kraštus.",
+    },
+    component: () => import('../views/KelionesView.vue')
+
+  },
+  {
     path: '/about',
     name: 'about',
     meta: {
@@ -48,6 +66,11 @@ const routes = [
     component: () => import('../views/StraipsniaiView.vue'),
     children: [
       {
+        path: '',
+        name: 'straipsniaihome',
+        component: () => import ('../views/straipsniai/StraipsniaiHome.vue')
+      },
+      {
         path: '1',
         name: '1',
         component: () => import ('../views/straipsniai/PostOne.vue')
@@ -56,6 +79,16 @@ const routes = [
         path: '2',
         name: '2',
         component: () => import ('../views/straipsniai/PostTwo.vue')
+      },
+      {
+        path: '3',
+        name: '3',
+        component: () => import ('../views/straipsniai/PostThree.vue')
+      },
+      {
+        path: '4',
+        name: '4',
+        component: () => import ('../views/straipsniai/PostFour.vue')
       }
     ]
   }

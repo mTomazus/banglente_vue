@@ -1,14 +1,15 @@
 <template>
-    <div class="straipsnis">
+    <div class="straipsnis d-flex flex-column w-100 justify-content-around">
         <div class="title mt-3">
-           <h1>Molas Surf Competition 2015</h1>
+            <h1>Molas Surf Competition 2015</h1>
             <h2>Klaipėdos Šiaurinis Molas</h2>
             <h3>2015 Lapkričio 8 d.</h3>  
         </div>
         <div>
             <p>Pirmosios Lietuvos banglenčių varžybos</p>
             <p>Sąlygos buvo  ne pyragai :)</p>
-            <p>Dalyvių buvo 8 ( 6 lietuviai ir 2 latvijos sportininkai )</p>
+            <p>Dalyvių buvo 8</p>
+            <p>( 6 lietuviai ir 2 latvijos sportininkai )</p>
             <p>Teisėjavo: Gediminas Ustinavičius - Akinys ir Robertas Gradauskas - Bobas</p>
         </div>
         <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -54,10 +55,16 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
     .straipsnis {
-        height: 100vh;
-        padding-top: 7vh;
+        min-height: 93vh;
+        h3 {
+            background-color: white;
+            width: max-content;
+            color: black;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
     }
     .carousel-item img {
         max-height: 232px;
