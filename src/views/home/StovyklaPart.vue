@@ -63,6 +63,19 @@
         font-family: Alegreya Sans;
         padding: 0 1rem;
     }
+    .desktop {
+        h1 {
+            font-size: 60px;
+        }  
+        h2 {
+            width: fit-content;
+            font-size: 40px;
+            text-align: center;
+            width: 80%;
+            margin: 3rem auto 0;
+            background: #ffffff54;
+        }
+    }
     .w-50{
         margin: auto;
     }

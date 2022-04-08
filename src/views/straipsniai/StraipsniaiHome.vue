@@ -77,4 +77,9 @@
            background-image: url('@/assets/straipsniai/interference.jpg');
         }
     }
+    a:nth-child(3) {
+        .card-body {
+           background-image: url('@/assets/straipsniai/temp.jpg');
+        }
+    }
 </style>

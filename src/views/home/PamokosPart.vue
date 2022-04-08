@@ -44,6 +44,7 @@
         background-attachment: fixed;
         background-size: cover;
         background-position-x: center;
+        background-position-y: center;
         justify-content: space-evenly;
     }
     .button {
